@@ -16,6 +16,14 @@ You can install the package via npm:
 npm install @nodesandbox/response-kit
 ```
 
+### Peer Dependency
+
+Please note that this package requires `express` to function properly. You need to install `express` in your project as well:
+
+```bash
+npm install express @types/express
+```
+
 ## Usage
 
 Here's a quick example of how to use the response and error handlers in your Express application:
