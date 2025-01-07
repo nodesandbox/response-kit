@@ -1,13 +1,14 @@
 import { Response } from 'express';
-import { ErrorResponseType, SuccessResponseType } from './types';
+import { ErrorResponseType, SuccessResponseType } from '.';
 
 export class ApiResponse {
   static success<T>(
     res: Response,
-    data: SuccessResponseType<T>,
+    data:  unknown | SuccessResponseType<T>,
     statusCode = 200,
   ): Response {
-    return res.status(statusCode).json(data);
+    const responseBody = data as SuccessResponseType<T>;
+    return res.status(statusCode).json(responseBody);
   }
 
   static error(res: Response, error: ErrorResponseType): Response {
