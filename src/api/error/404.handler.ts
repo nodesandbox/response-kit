@@ -6,5 +6,5 @@ export const NotFoundHandler = (
   res: Response,
   next: NextFunction,
 ) => {
-  next(new ErrorResponse('NOT_FOUND_ERROR', 'Resource Not Found'));
+  next(new ErrorResponse({ code: 'NOT_FOUND_ERROR', message: 'Resource Not Found' }));
 };

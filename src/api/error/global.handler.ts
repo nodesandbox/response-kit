@@ -14,9 +14,10 @@ export const GlobalErrorHandler = (
   const error = isErrorResponse
     ? err
     : new ErrorResponse(
-        'GENERAL_ERROR',
-        err.message || 'An unexpected error occurred',
-      );
+      { 
+        code: 'GENERAL_ERROR', 
+        message: 'An unexpected error occurred' 
+      });
 
   ApiResponse.error(res, {
     success: false,
